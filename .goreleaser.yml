@@ -22,7 +22,7 @@ builds:
           goarch: arm64
       dir: cmd/udptl-parser
       main: ./main.go
-#       ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}} -linkmode=external -extldflags '-static-libgcc -static-libstdc++ -Wl,-Bdynamic,-lgcc_s,-lc,-lutil,-lrt,-lpthread,-ldl'"
+      ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}} -extldflags '-static'"
 
 archives:
   - id: udptl-parser
