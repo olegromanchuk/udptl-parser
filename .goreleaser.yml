@@ -9,6 +9,15 @@ builds:
         - linux
       goarch:
         - amd64
+      ignore:
+        - goos: freebsd
+          goarch: arm
+        - goos: freebsd
+          goarch: arm64
+        - goos: windows
+          goarch: arm
+        - goos: windows
+          goarch: arm64
       dir: cmd/udptl-parser
       main: ./main.go
       ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}}"
@@ -26,3 +35,19 @@ archives:
     format: tar.gz
     builds:
       - udptl-parser
+
+nfpms:
+  - id: udptl-parser
+    package_name: udptl-parser
+    file_name_template: "{{.ProjectName}}_{{.Tag}}_{{.Os}}_{{.Arch}}"
+    vendor: Improcom
+    homepage: https://github.com/olegromanchuk/udptl-parser
+    maintainer: Oleg Ro <oleg@romanchuk.us>
+    description: An utility that parses pcap file and display which udptl streams exist.
+    license: MIT
+    formats:
+      - deb
+      - rpm
+    bindir: /usr/bin
+    epoch: 1
+    release: 1
