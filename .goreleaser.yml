@@ -5,6 +5,8 @@ project_name: udptl-parser
 builds:
     - id: udptl-parser
       binary: "udptl-parser-{{.Tag}}"
+      env:
+        - CGO_ENABLED=1
       goos:
         - linux
       goarch:
@@ -20,7 +22,7 @@ builds:
           goarch: arm64
       dir: cmd/udptl-parser
       main: ./main.go
-      ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}}"
+      ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}} -extldflags '-static'"
 
 archives:
   - id: udptl-parser
