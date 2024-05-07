@@ -1,4 +1,4 @@
-[![build](https://github.com/olegromanchuk/udptl-parser/actions/workflows/release.yml/badge.svg)](https://github.com/olegromanchuk/udptl-parser/actions/workflows/release.yml/badge.svg)
+[![build](https://github.com/olegromanchuk/udptl-parser/actions/workflows/build.yml/badge.svg)](https://github.com/olegromanchuk/udptl-parser/actions/workflows/build.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/olegromanchuk/udptl-parser/badge.svg?branch=master)](https://coveralls.io/github/olegromanchuk/udptl-parser?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/olegromanchuk/udptl-parser)](https://goreportcard.com/report/github.com/olegromanchuk/udptl-parser)
 [![Go Reference](https://pkg.go.dev/badge/github.com/olegromanchuk/udptl-parser.svg)](https://pkg.go.dev/github.com/olegromanchuk/udptl-parser)
