@@ -9,7 +9,7 @@ builds:
     goos:
       - linux
     goarch:
-      - amd64
+      - "386"
     goarm:
       - "6"
     gomips:
@@ -17,7 +17,7 @@ builds:
     goamd64:
       - v1
     targets:
-      - linux_amd64_v1
+      - linux_386
     dir: cmd/udptl-parser
     main: ./main.go
     binary: udptl-parser-{{.Tag}}
