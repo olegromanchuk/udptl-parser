@@ -10,7 +10,7 @@ builds:
       goos:
         - linux
       goarch:
-        - amd64
+        - 386
       dir: cmd/udptl-parser
       main: ./main.go
       ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}}"
