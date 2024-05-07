@@ -27,20 +27,12 @@ jobs:
 
       - name: go test
         run: |
-          go test -v -timeout=100s -covermode=count -coverprofile=profile.cov ./...
+          go test -v -timeout=100s ./...
 
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v3
         with:
           version: latest
-
-      - name: Install goveralls
-        run: go install github.com/mattn/goveralls@latest
-
-      - name: Send coverage
-        env:
-          COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: goveralls -coverprofile=profile.cov -service=github
 
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v4
@@ -48,4 +40,4 @@ jobs:
           version: latest
           args: release --clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GORELEASER_GITHUB_TOKEN }}
