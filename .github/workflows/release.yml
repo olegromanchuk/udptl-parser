@@ -10,7 +10,6 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-
       - name: Install libpcap
         run: |
           sudo apt-get update
