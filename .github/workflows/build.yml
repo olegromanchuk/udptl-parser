@@ -2,10 +2,10 @@ name: build
 
 on:
   push:
-    branches:
-      - qa
-      - hotfix
-      - master
+#     branches:
+#       - qa
+#       - hotfix
+#       - master
     tags:
       - v*
 
