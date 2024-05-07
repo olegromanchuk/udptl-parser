@@ -12,7 +12,9 @@ jobs:
     steps:
 
       - name: Install libpcap
-        run: echo "deb http://security.ubuntu.com/ubuntu bionic-security main" | sudo tee -a /etc/apt/sources.list && sudo apt-get update && sudo apt-get install libpcap-dev
+        run: |
+          sudo apt-get update
+
 
       - name: check out code
         uses: actions/checkout@v3
@@ -44,6 +46,6 @@ jobs:
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GORELEASER_GITHUB_TOKEN }}
-          CGO_ENABLED=1
-          CGO_CFLAGS="-I/usr/local/include"  # Adjust if your include path differs
-          CGO_LDFLAGS="-L/usr/local/lib -lpcap -ldbus-1 -static"  # Link statically
+          CGO_ENABLED: 1
+          CGO_CFLAGS: "-I/usr/local/include"  # Adjust if your include path differs
+          CGO_LDFLAGS: "-L/usr/local/lib -lpcap -ldbus-1 -static"  # Link statically
