@@ -26,8 +26,6 @@ builds:
     command: build
     ldflags:
       - -s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}}
-    env:
-      - CGO_ENABLED=0
 archives:
   - id: udptl-parser
     builds:
