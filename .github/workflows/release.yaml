@@ -10,9 +10,13 @@ on:
       - v*
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Install libpcap
+        run: sudo apt-get install libpcap-dev
+
       - name: check out code
         uses: actions/checkout@v3
 
