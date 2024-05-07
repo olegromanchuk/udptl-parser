@@ -46,7 +46,7 @@ jobs:
         run: goveralls -coverprofile=profile.cov -service=github
 
       - name: Setup tmate session
-         uses: mxschmitt/action-tmate@v3
+        uses: mxschmitt/action-tmate@v3
 
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v4
