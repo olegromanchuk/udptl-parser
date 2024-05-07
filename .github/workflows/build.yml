@@ -1,4 +1,4 @@
-name: release
+name: build
 
 on:
   push:
@@ -44,9 +44,6 @@ jobs:
         env:
           COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: goveralls -coverprofile=profile.cov -service=github
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v4
