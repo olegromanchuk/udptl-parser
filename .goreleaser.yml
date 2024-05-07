@@ -1,0 +1,30 @@
+# signs:
+#     - artifacts: checksum
+
+project_name: udptl-parser
+builds:
+    - id: udptl-parser
+      binary: "udptl-parser-{{.Tag}}"
+      env:
+        - CGO_ENABLED=0
+      goos:
+        - linux
+      goarch:
+        - amd64
+      dir: cmd/udptl-parser
+      main: ./main.go
+      ldflags: "-s -w -X main.revision={{.Tag}}-{{.ShortCommit}}-{{.CommitDate}}"
+
+archives:
+  - id: udptl-parser
+    name_template: >-
+       udptl-parser_
+       {{- .Tag}}_
+       {{- if eq .Os "darwin"}}macos
+       {{- else}}{{.Os}}{{end}}_
+       {{- if eq .Arch "amd64"}}x86_64
+       {{- else if eq .Arch "386"}}i386
+       {{- else}}{{.Arch}}{{end}}
+    format: tar.gz
+    builds:
+      - udptl-parser
