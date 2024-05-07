@@ -34,14 +34,6 @@ jobs:
         with:
           version: latest
 
-      - name: Install goveralls
-        run: go install github.com/mattn/goveralls@latest
-
-      - name: Send coverage
-        env:
-          COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: goveralls -coverprofile=profile.cov -service=github
-
       - name: run goreleaser
         uses: goreleaser/goreleaser-action@v4
         with:
