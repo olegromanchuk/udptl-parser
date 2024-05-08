@@ -46,13 +46,17 @@ func main() {
 	//parse flags and check if filename is provided as an argument. If not - return an error
 	// Define a string flag for filename with a default value and a usage description
 	filename := flag.String("filename", "", "Path to the pcap file")
+	//filterNumber := flag.String("number", "", "numbers to search")
 
 	// Parse the command-line flags
 	flag.Parse()
 
 	// Check if filename is provided
 	if *filename == "" {
-		fmt.Println("Error: No filename provided. Use the -filename flag to specify the path to the PCAP file.")
+		fmt.Println(`
+Error: No filename provided. Use the -filename flag to specify the path to the PCAP file.
+Example: udptl-parser -filename dumpfile.pcap
+How to get pcap file: tcpdump -s0 -X -vvvnn -w dumpfile.pcap`)
 		os.Exit(1)
 	}
 
