@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Install libpcap
+      - name: Install static libraries
         run: |
           sudo apt-get update
           sudo apt-get install libdbus-1-dev
