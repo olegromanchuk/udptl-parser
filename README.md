@@ -1,8 +1,9 @@
 [![build](https://github.com/olegromanchuk/udptl-parser/actions/workflows/build.yml/badge.svg)](https://github.com/olegromanchuk/udptl-parser/actions/workflows/build.yml/badge.svg)
-[//]: # ([![Coverage Status]&#40;https://coveralls.io/repos/github/olegromanchuk/udptl-parser/badge.svg?branch=master&#41;]&#40;https://coveralls.io/github/olegromanchuk/udptl-parser?branch=master&#41;)
 [![Go Report Card](https://goreportcard.com/badge/github.com/olegromanchuk/udptl-parser)](https://goreportcard.com/report/github.com/olegromanchuk/udptl-parser)
 [![Go Reference](https://pkg.go.dev/badge/github.com/olegromanchuk/udptl-parser.svg)](https://pkg.go.dev/github.com/olegromanchuk/udptl-parser)
 [![GitHub release (release name instead of tag name)](https://img.shields.io/github/v/release/olegromanchuk/udptl-parser)](https://github.com/olegromanchuk/udptl-parser/releases)
+
+[//]: # ([![Coverage Status]&#40;https://coveralls.io/repos/github/olegromanchuk/udptl-parser/badge.svg?branch=master&#41;]&#40;https://coveralls.io/github/olegromanchuk/udptl-parser?branch=master&#41;)
 
 # Udptl / RTP stream parser
 Helpful in fax troubleshooting.  
